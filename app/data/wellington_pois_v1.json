@@ -1,0 +1,222 @@
+[
+  {
+    "id": "te_papa",
+    "name": "Te Papa Tongarewa Museum",
+    "tags": ["culture", "history", "family", "art"],
+    "costLevel": "free",
+    "avgDurationMin": 120,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "zealandia",
+    "name": "Zealandia Ecosanctuary",
+    "tags": ["nature", "wildlife", "adventure"],
+    "costLevel": "expensive",
+    "avgDurationMin": 180,
+    "kidFriendly": true,
+    "accessibilityFriendly": false,
+    "indoor": false,
+    "walkingLevel": "high"
+  },
+  {
+    "id": "mount_vic",
+    "name": "Mount Victoria Lookout",
+    "tags": ["views", "nature", "adventure"],
+    "costLevel": "free",
+    "avgDurationMin": 90,
+    "kidFriendly": true,
+    "accessibilityFriendly": false,
+    "indoor": false,
+    "walkingLevel": "high"
+  },
+  {
+    "id": "weta_workshop",
+    "name": "Weta Workshop Tour",
+    "tags": ["culture", "art", "entertainment"],
+    "costLevel": "expensive",
+    "avgDurationMin": 60,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "cuba_street",
+    "name": "Cuba Street Food & Coffee",
+    "tags": ["food", "shopping", "culture"],
+    "costLevel": "cheap",
+    "avgDurationMin": 90,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "cable_car",
+    "name": "Wellington Cable Car",
+    "tags": ["views", "culture", "family"],
+    "costLevel": "cheap",
+    "avgDurationMin": 45,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "botanic_garden",
+    "name": "Wellington Botanic Garden",
+    "tags": ["nature", "views", "family"],
+    "costLevel": "free",
+    "avgDurationMin": 90,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "medium"
+  },
+  {
+    "id": "city_gallery",
+    "name": "City Gallery Wellington",
+    "tags": ["art", "culture", "indoor"],
+    "costLevel": "free",
+    "avgDurationMin": 60,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "oriental_bay",
+    "name": "Oriental Bay Beach",
+    "tags": ["nature", "views", "adventure"],
+    "costLevel": "free",
+    "avgDurationMin": 60,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "waterfront",
+    "name": "Wellington Waterfront Walk",
+    "tags": ["nature", "views", "family"],
+    "costLevel": "free",
+    "avgDurationMin": 75,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "beehive",
+    "name": "Beehive Parliament Tour",
+    "tags": ["culture", "history", "family"],
+    "costLevel": "free",
+    "avgDurationMin": 60,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "night_markets",
+    "name": "Wellington Night Markets",
+    "tags": ["food", "culture", "shopping"],
+    "costLevel": "cheap",
+    "avgDurationMin": 90,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "red_rocks",
+    "name": "Red Rocks Coastal Walk",
+    "tags": ["nature", "adventure", "views"],
+    "costLevel": "free",
+    "avgDurationMin": 150,
+    "kidFriendly": false,
+    "accessibilityFriendly": false,
+    "indoor": false,
+    "walkingLevel": "high"
+  },
+  {
+    "id": "capital_e",
+    "name": "Capital E (Kids Museum)",
+    "tags": ["family", "culture", "indoor"],
+    "costLevel": "cheap",
+    "avgDurationMin": 90,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "brew_bar",
+    "name": "Craft Beer & Bar Hop",
+    "tags": ["food", "culture", "entertainment"],
+    "costLevel": "medium",
+    "avgDurationMin": 120,
+    "kidFriendly": false,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "carter_obs",
+    "name": "Carter Observatory",
+    "tags": ["culture", "science", "family"],
+    "costLevel": "cheap",
+    "avgDurationMin": 75,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "johnsonville_walk",
+    "name": "Johnsonville Scenic Walk",
+    "tags": ["nature", "adventure"],
+    "costLevel": "free",
+    "avgDurationMin": 120,
+    "kidFriendly": false,
+    "accessibilityFriendly": false,
+    "indoor": false,
+    "walkingLevel": "high"
+  },
+  {
+    "id": "fine_dining",
+    "name": "Logan Brown Fine Dining",
+    "tags": ["food", "culture"],
+    "costLevel": "expensive",
+    "avgDurationMin": 120,
+    "kidFriendly": false,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "lambton_shopping",
+    "name": "Lambton Quay Shopping",
+    "tags": ["shopping", "culture"],
+    "costLevel": "medium",
+    "avgDurationMin": 90,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": true,
+    "walkingLevel": "low"
+  },
+  {
+    "id": "zoos_sanctuary",
+    "name": "Wellington Zoo",
+    "tags": ["nature", "family", "wildlife"],
+    "costLevel": "medium",
+    "avgDurationMin": 150,
+    "kidFriendly": true,
+    "accessibilityFriendly": true,
+    "indoor": false,
+    "walkingLevel": "medium"
+  }
+]
