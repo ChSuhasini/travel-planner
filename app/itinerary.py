@@ -62,6 +62,29 @@ def passes_constraints(poi: Dict[str, Any], constraints: Dict[str, bool]) -> boo
         return False
     return True
 
+def score_poi(poi: Dict[str, Any], interests: Dict[str, int], budget_nzd: int, days: int) -> float:
+    tags = set(poi.get("tags", []))
+
+    pref_score = 0.0
+    for interest, weight in interests.items():
+        if interest in tags:
+            pref_score += float(weight)
+
+    budget_per_day = (budget_nzd / max(days, 1)) if budget_nzd > 0 else 999999
+    cost_level = poi.get("costLevel", "medium")
+    cost_bucket = COST_SCORE.get(cost_level, 2)
+
+    if budget_per_day < 200:
+        cost_penalty = cost_bucket * 1.5
+    elif budget_per_day < 350:
+        cost_penalty = cost_bucket * 0.8
+    else:
+        cost_penalty = cost_bucket * 0.3
+
+    indoor_bonus = 0.5 if poi.get("indoor", False) else 0.0
+
+    return pref_score + indoor_bonus - cost_penalty
+
 def generate_itinerary(
     days: int,
     budget_nzd: int,
