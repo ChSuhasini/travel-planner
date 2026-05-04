@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.db import Base, engine
 from app.routes import router
 
 app = FastAPI(
@@ -8,8 +7,6 @@ app = FastAPI(
     description="A REST API for planning trips to Wellington, NZ",
     version="1.0.0",
 )
-
-Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
