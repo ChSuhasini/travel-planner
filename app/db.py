@@ -13,4 +13,4 @@ def get_connection():
         port=os.getenv("DB_PORT"),
         sslmode="require"
     )
-    return connection
+    return connections
