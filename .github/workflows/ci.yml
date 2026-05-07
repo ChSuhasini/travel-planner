@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: traveller
+          POSTGRES_PASSWORD: travelpass
+          POSTGRES_DB: travelplanner
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create database tables
+        env:
+          PGPASSWORD: travelpass
+        run: psql -h localhost -U traveller -d travelplanner -f schema.sql
+
+      - name: Run tests
+        env:
+          DB_HOST: localhost
+          DB_NAME: travelplanner
+          DB_USER: traveller
+          DB_PASSWORD: travelpass
+          DB_PORT: 5432
+        run: pytest tests/ -v
