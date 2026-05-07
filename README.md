@@ -1,3 +1,5 @@
+![CI](https://github.com/ChSuhasini/travel-planner/actions/workflows/ci.yml/badge.svg)
+
 # Travel Planner API
 
 A REST API that generates personalised day-by-day travel itineraries for Wellington, New Zealand.
@@ -16,9 +18,32 @@ Users provide their trip preferences and the API returns a complete itinerary:
 - **Python** → primary language
 - **FastAPI** → REST API framework
 - **PostgreSQL** → database
-- **psycopg2** → connects Python to PostgreSQL
+- **psycopg2** → connects Python to PostgreSQL with raw SQL
 - **Pydantic** → request validation
+- **pytest** → automated testing
+- **GitHub Actions** → CI/CD pipeline
 - **Docker** → database containerisation
+
+## Project Structure
+
+travel-planner/
+├── app/
+│   ├── main.py        → API entry point
+│   ├── db.py          → database connection
+│   ├── routes.py      → API endpoints
+│   ├── itinerary.py   → trip generation logic
+│   └── data/
+│       └── wellington_pois_v1.json → Wellington attractions
+├── tests/
+│   ├── conftest.py    → pytest fixtures and setup
+│   └── test_trips.py  → API tests
+├── .github/
+│   └── workflows/
+│       └── ci.yml     → GitHub Actions CI pipeline
+├── schema.sql         → database table definitions
+├── docker-compose.yml → database container setup
+├── requirements.txt   → Python dependencies
+└── .env               → environment variables (not in git)
 
 ## How to Run
 
@@ -41,9 +66,11 @@ pip install -r requirements.txt
 
 ### 4. Set up environment variables
 Create a `.env` file in the root folder:
-```
-DATABASE_URL=postgresql+psycopg2://traveller:travelpass@localhost:5432/travelplanner
-```
+DB_HOST=localhost
+DB_NAME=travelplanner
+DB_USER=traveller
+DB_PASSWORD=travelpass
+DB_PORT=5432
 
 ### 5. Set up the database
 ```bash
@@ -56,9 +83,7 @@ uvicorn app.main:app --reload
 ```
 
 ### 7. Open API docs
-```
 http://localhost:8000/docs
-```
 
 ## API Endpoints
 
@@ -114,20 +139,29 @@ The itinerary engine scores each Wellington attraction based on:
 2. **Cost penalty** → expensive places penalised for tight budgets
 3. **Indoor bonus** → small bonus for indoor places (Wellington is rainy!)
 
-Places are ranked by score and filled into days respecting the pace time limit.
+Places are ranked by score and filled into days respecting the pace time limit. Same place never appears twice across the whole trip.
 
-## Project Structure
+## Running Tests
 
+```bash
+pytest tests/ -v
+```
 
-travel-planner/
-├── app/
-│   ├── main.py        → API entry point
-│   ├── db.py          → database connection
-│   ├── routes.py      → API endpoints
-│   ├── itinerary.py   → trip generation logic
-│   └── data/
-│       └── wellington_pois_v1.json → Wellington attractions
-├── schema.sql         → database table definitions
-├── docker-compose.yml → database container setup
-├── requirements.txt   → Python dependencies
-└── .env               → environment variables (not in git)
+Tests cover:
+- Creating a trip
+- Retrieving a saved trip
+- 404 handling for missing trips
+- Input validation
+- Replacing an activity
+- Locking a slot and preventing replacement
+
+## CI/CD
+
+This project uses GitHub Actions for continuous integration. Every push to `main` automatically:
+1. Sets up Python 3.12
+2. Starts a PostgreSQL database
+3. Creates database tables
+4. Runs all tests
+
+See the Actions tab for test results.
+
