@@ -1,5 +1,10 @@
 ![CI](https://github.com/ChSuhasini/travel-planner/actions/workflows/ci.yml/badge.svg)
 
+## Live Demo
+- **Frontend** → https://harmonious-maamoul-0a0318.netlify.app
+- **API** → https://travel-planner-production-97d6.up.railway.app
+- **API Docs** → https://travel-planner-production-97d6.up.railway.app/docs
+
 # Travel Planner API
 
 A REST API that generates personalised day-by-day travel itineraries for Wellington, New Zealand.
